@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Unshackle Dem Stats</string>
+    <string name="Filler"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed residamus, inquit, si placet. At certe gravius. Ergo hoc quidem apparet, nos ad agendum esse natos. <b>Sed residamus, inquit, si placet.</b> Duo Reges: constructio interrete. Hanc ergo intuens debet institutum illud quasi signum absolvere. </p>]]></string>
+    <string name="ask_yourself_if_i_died_why_if_a_play_worked_or_i_got_a_kill_why_3_things_i_learned_this_game">Ask yourself:\n If I died, why?\n If a play worked , or I got a kill... why?\n 3 things I learned this game:</string>
 </resources>
