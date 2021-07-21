@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:fillViewport="true"
     android:layout_width="match_parent"
-    android:background="@color/prof_gray"
+    android:background="@drawable/marble_background"
     android:layout_height="match_parent">
 
 
