@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UnshackleDemStats">
-        <activity android:name=".Champions.AniviaActivity"></activity>
+        <activity android:name=".MatchHistoryDisplay"></activity>
+        <activity android:name=".Champions.AniviaActivity" />
         <activity android:name=".Champions.ZedActivity" />
         <activity android:name=".StatsPage" />
         <activity

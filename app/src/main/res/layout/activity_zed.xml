@@ -171,6 +171,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
+            android:background="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.307"
             app:layout_constraintStart_toStartOf="parent"
@@ -182,6 +183,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
+            android:background="@color/white"
             android:layout_marginEnd="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView8"
@@ -189,6 +191,7 @@
 
         <ImageView
             android:id="@+id/imageView"
+            android:background="@color/white"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -201,6 +204,7 @@
 
         <ImageView
             android:id="@+id/imageView"
+            android:background="@color/white"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
@@ -208,10 +212,12 @@
             app:layout_constraintHorizontal_bias="0.261"
             app:layout_constraintStart_toEndOf="@+id/imageView"
             app:layout_constraintTop_toBottomOf="@+id/textView8"
-            app:srcCompat="@drawable/ic_mad" />
+            app:srcCompat="@drawable/ic_mad"
+            tools:ignore="DuplicateIds,NotSibling" />
 
         <ImageView
             android:id="@+id/imageView"
+            android:background="@color/white"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
@@ -220,7 +226,8 @@
             app:layout_constraintHorizontal_bias="0.937"
             app:layout_constraintStart_toEndOf="@+id/imageView"
             app:layout_constraintTop_toBottomOf="@+id/textView8"
-            app:srcCompat="@drawable/ic_mad" />
+            app:srcCompat="@drawable/ic_mad"
+            tools:ignore="DuplicateIds,NotSibling" />
 
 
         <TextView
@@ -240,17 +247,18 @@
         <EditText
             android:id="@+id/editTextTextPersonName2"
             android:layout_width="match_parent"
-            android:gravity="top"
             android:layout_height="375dp"
             android:layout_margin="12dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="12dp"
             android:background="@color/gold_font"
             android:ems="10"
             android:fontFamily="@font/fq_regular"
-            android:hint="Input Notes Here"
+            android:gravity="top"
+            android:hint="Notes Here..."
+            android:textColorHint="@color/white"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.666"
+            app:layout_constraintHorizontal_bias="0.375"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
@@ -281,16 +289,22 @@
             app:layout_constraintStart_toStartOf="parent"/>
 
         <EditText
+
             android:id="@+id/learned"
+            android:gravity="top"
+            android:hint="Notes here... "
+            android:textColorHint="@color/white"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_margin="15dp"
+            android:layout_marginTop="12dp"
             android:background="@color/gold_font"
-            app:layout_constraintTop_toBottomOf="@+id/reflectionText"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             android:fontFamily="@font/fq_regular"
-            android:textSize="18sp"/>
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.586"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reflectionText" />
 
         <TextView
             android:id="@+id/watchVods"
@@ -322,22 +336,55 @@
             android:id="@+id/vodInput"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_marginTop="20dp"
+            android:layout_margin="15dp"
+            android:hint="Notes here..."
+            android:fontFamily="@font/fq_regular"
+            android:textColorHint="@color/white"
             android:layout_marginBottom="80dp"
+            android:gravity="top"
             app:layout_constraintTop_toBottomOf="@+id/vodInstructions"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:background="@color/gold_font"/>
+            android:background="@color/gold_font"
+           />
 
         <Button
+            android:id="@+id/buttonWin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WIN"
+            android:layout_marginTop="25dp"
+            android:backgroundTint="#A1FCDF"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.226"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vodInput" />
+
+        <Button
+            android:id="@+id/buttonLose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LOSE"
+            android:textColor="@color/black"
+            android:backgroundTint="#CE4257"
+            android:layout_marginTop="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.632"
+            app:layout_constraintStart_toStartOf="@+id/buttonWin"
+            app:layout_constraintTop_toBottomOf="@+id/vodInput" />
+
+        <Button
+            android:id="@+id/addGameButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="INPUT GAME"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"
+            android:layout_marginTop="25dp"
             android:fontFamily="@font/fq_regular"
             android:textSize="14sp"
-            app:layout_constraintTop_toBottomOf="@+id/vodInput"
+            app:layout_constraintTop_toBottomOf="@+id/buttonLose"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 

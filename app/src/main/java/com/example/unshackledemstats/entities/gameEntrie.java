@@ -32,6 +32,28 @@ public class gameEntrie implements Serializable {
     @ColumnInfo(name = "vods_notes")
     private String vodNotes;
 
+    @ColumnInfo(name = "match_up")
+    private String matchUp;
+
+    @ColumnInfo(name = "colorBack")
+    private String color;
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getMatchUp() {
+        return matchUp;
+    }
+
+    public void setMatchUp(String matchUp) {
+        this.matchUp = matchUp;
+    }
+
     public int getUid() {
         return uid;
     }
