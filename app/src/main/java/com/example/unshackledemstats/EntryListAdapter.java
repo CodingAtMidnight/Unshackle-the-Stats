@@ -49,7 +49,8 @@ public class EntryListAdapter extends RecyclerView.Adapter<EntryListAdapter.MyVi
           holder.gameKills.setText(String.valueOf(this.gameEntrieList.get(position).getGameKills()));
           holder.gameDeaths.setText(String.valueOf(this.gameEntrieList.get(position).getGameDeaths()));
           holder.visionScore.setText(String.valueOf(this.gameEntrieList.get(position).getVisionScore()));
-          holder.setColor(gameEntrieList.get(position));
+          holder.setColor(this.gameEntrieList.get(position));
+
     }
 
     @Override
@@ -75,15 +76,13 @@ public class EntryListAdapter extends RecyclerView.Adapter<EntryListAdapter.MyVi
               layoutEntry = view.findViewById(R.id.layoutEntry);
           }
 
-
           void setColor(gameEntrie gameEntrie) {
-              GradientDrawable gradientDrawable = (GradientDrawable) layoutEntry.getBackground();
-              if (gameEntrie.getColor() == null) {
-                  gradientDrawable.setColor(Color.parseColor(gameEntrie.getColor()));
+
+              if (gameEntrie.getColor() != null) {
+                  layoutEntry.setBackgroundColor(Color.parseColor(gameEntrie.getColor()));
               } else {
-                  gradientDrawable.setColor(Color.parseColor("#333333"));
+                  layoutEntry.setBackgroundColor(Color.parseColor("#ffff00"));
               }
           }
-
     }
 }

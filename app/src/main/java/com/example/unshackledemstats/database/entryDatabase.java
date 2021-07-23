@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase;
 import com.example.unshackledemstats.Dao.EntryDao;
 import com.example.unshackledemstats.entities.gameEntrie;
 
-@Database(entities = {gameEntrie.class}, version = 1, exportSchema = false)
+@Database(entities = {gameEntrie.class}, version = 2, exportSchema = false)
 public abstract class entryDatabase extends RoomDatabase {
    public abstract EntryDao entryDao();
 

@@ -38,6 +38,7 @@ public class gameEntrie implements Serializable {
     @ColumnInfo(name = "colorBack")
     private String color;
 
+
     public String getColor() {
         return color;
     }

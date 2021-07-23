@@ -58,12 +58,12 @@ public class ZedActivity extends AppCompatActivity {
             public void onClick(View v) {
                 saveNewEntry(creepScore.getText().toString(), gameDeaths.getText().toString(), gameKills.getText().toString(),
                         visionScore.getText().toString(), gameNotes.getText().toString(), reflectionNotes.getText().toString(),
-                        vodNotes.getText().toString(),battleTitle.getText().toString());
+                        vodNotes.getText().toString(),battleTitle.getText().toString(),backColor);
             }
         });
     }
 
-    private void saveNewEntry(String creepScores, String gameDeaths, String gameKills, String visionScore, String gameNotes, String reflectionNotes, String vodNotes, String battleTitle) {
+    private void saveNewEntry(String creepScores, String gameDeaths, String gameKills, String visionScore, String gameNotes, String reflectionNotes, String vodNotes, String battleTitle, String backColor) {
         entryDatabase db = entryDatabase.getEntryInstance(this.getApplicationContext());
 
         gameEntrie gameEntrie = new gameEntrie();
