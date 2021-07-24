@@ -38,6 +38,17 @@ public class gameEntrie implements Serializable {
     @ColumnInfo(name = "colorBack")
     private String color;
 
+    @ColumnInfo(name = "win_rate")
+    private double winRate;
+
+
+    public double getWinRate() {
+        return winRate;
+    }
+
+    public void setWinRate(double winRate) {
+        this.winRate = winRate;
+    }
 
     public String getColor() {
         return color;

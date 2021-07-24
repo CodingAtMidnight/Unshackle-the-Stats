@@ -6,6 +6,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -49,6 +50,7 @@ public class EntryListAdapter extends RecyclerView.Adapter<EntryListAdapter.MyVi
           holder.gameKills.setText(String.valueOf(this.gameEntrieList.get(position).getGameKills()));
           holder.gameDeaths.setText(String.valueOf(this.gameEntrieList.get(position).getGameDeaths()));
           holder.visionScore.setText(String.valueOf(this.gameEntrieList.get(position).getVisionScore()));
+          holder.winRate.setText(String.valueOf(this.gameEntrieList.get(position).getWinRate()));
           holder.setColor(this.gameEntrieList.get(position));
 
     }
@@ -64,6 +66,7 @@ public class EntryListAdapter extends RecyclerView.Adapter<EntryListAdapter.MyVi
           TextView gameDeaths;
           TextView gameKills;
           TextView visionScore;
+          TextView winRate;
           LinearLayout layoutEntry;
 
           public MyViewHolder(View view) {
@@ -72,8 +75,10 @@ public class EntryListAdapter extends RecyclerView.Adapter<EntryListAdapter.MyVi
               creepScore = view.findViewById(R.id.creepScore);
               gameDeaths = view.findViewById(R.id.gameDeaths);
               gameKills = view.findViewById(R.id.gameKills);
+              winRate = view.findViewById(R.id.winRate);
               visionScore = view.findViewById(R.id.visionScore);
               layoutEntry = view.findViewById(R.id.layoutEntry);
+
           }
 
           void setColor(gameEntrie gameEntrie) {
@@ -81,7 +86,7 @@ public class EntryListAdapter extends RecyclerView.Adapter<EntryListAdapter.MyVi
               if (gameEntrie.getColor() != null) {
                   layoutEntry.setBackgroundColor(Color.parseColor(gameEntrie.getColor()));
               } else {
-                  layoutEntry.setBackgroundColor(Color.parseColor("#ffff00"));
+                  layoutEntry.setBackgroundColor(Color.parseColor("#d3d3d3"));
               }
           }
     }
