@@ -113,16 +113,10 @@
             android:textSize="15sp" />
 
 
-    </LinearLayout>
 
-    <TextView
-        android:id="@+id/winRate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/fq_regular"
-        android:textAlignment="center"
-        android:textSize="15sp"
-        android:textColor="@color/black"/>
+
+
+    </LinearLayout>
 
 
 </LinearLayout>

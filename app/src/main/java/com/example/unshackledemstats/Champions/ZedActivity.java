@@ -20,13 +20,8 @@ public class ZedActivity extends AppCompatActivity {
     private EditText creepScore, gameDeaths, gameKills, visionScore, gameNotes, reflectionNotes, vodNotes;
     private TextView battleTitle;
     private String backColor;
-    private float numberOfWins=0;
-    private float numberOfLosses = 0;
-    private double totalRate;
 
-    public double getTotalRate() {
-        return totalRate = numberOfWins / numberOfWins + numberOfLosses;
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +44,6 @@ public class ZedActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
               backColor = "#A1FCDF";
-              numberOfWins++;
             }
         });
 
@@ -57,7 +51,6 @@ public class ZedActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 backColor = "#CE4257";
-                numberOfLosses++;
             }
         });
 
@@ -69,7 +62,13 @@ public class ZedActivity extends AppCompatActivity {
                         vodNotes.getText().toString(),battleTitle.getText().toString(),backColor);
             }
         });
+
+
     }
+
+
+
+
 
     private void saveNewEntry(String creepScores, String gameDeaths, String gameKills, String visionScore, String gameNotes, String reflectionNotes, String vodNotes, String battleTitle, String backColor) {
         entryDatabase db = entryDatabase.getEntryInstance(this.getApplicationContext());
@@ -84,7 +83,6 @@ public class ZedActivity extends AppCompatActivity {
         gameEntrie.setVodNotes(vodNotes);
         gameEntrie.setMatchUp(battleTitle);
         gameEntrie.setColor(backColor);
-        gameEntrie.setWinRate(totalRate);
         db.entryDao().insertEntry(gameEntrie);
 
         finish();

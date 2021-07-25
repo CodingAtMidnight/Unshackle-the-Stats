@@ -26,6 +26,16 @@ public class MatchHistoryDisplay extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_match_history_display);
         Button addGameButton = findViewById(R.id.addGameButton);
+        Button clearAll = findViewById(R.id.clearButton);
+
+
+        clearAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deleteAllEntries();
+            }
+        });
+
         addGameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,6 +67,12 @@ public class MatchHistoryDisplay extends AppCompatActivity {
         entryDatabase db = entryDatabase.getEntryInstance(this.getApplicationContext());
         List<gameEntrie> gameEntryList = db.entryDao().getAllEntries();
         entryListAdapter.setGameEntrieList(gameEntryList);
+    }
+
+    private void deleteAllEntries() {
+        entryDatabase db = entryDatabase.getEntryInstance(this.getApplicationContext());
+        db.entryDao().deleteAll();
+        recreate();
     }
 
 

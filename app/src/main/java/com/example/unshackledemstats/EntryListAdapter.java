@@ -50,7 +50,6 @@ public class EntryListAdapter extends RecyclerView.Adapter<EntryListAdapter.MyVi
           holder.gameKills.setText(String.valueOf(this.gameEntrieList.get(position).getGameKills()));
           holder.gameDeaths.setText(String.valueOf(this.gameEntrieList.get(position).getGameDeaths()));
           holder.visionScore.setText(String.valueOf(this.gameEntrieList.get(position).getVisionScore()));
-          holder.winRate.setText(String.valueOf(this.gameEntrieList.get(position).getWinRate()));
           holder.setColor(this.gameEntrieList.get(position));
 
     }
@@ -75,7 +74,6 @@ public class EntryListAdapter extends RecyclerView.Adapter<EntryListAdapter.MyVi
               creepScore = view.findViewById(R.id.creepScore);
               gameDeaths = view.findViewById(R.id.gameDeaths);
               gameKills = view.findViewById(R.id.gameKills);
-              winRate = view.findViewById(R.id.winRate);
               visionScore = view.findViewById(R.id.visionScore);
               layoutEntry = view.findViewById(R.id.layoutEntry);
 

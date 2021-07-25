@@ -19,4 +19,7 @@ public interface EntryDao {
 
     @Delete
     void deleteEntry(gameEntrie...gameEntries);
+
+    @Query("DELETE FROM gameEntries")
+    void deleteAll();
 }
