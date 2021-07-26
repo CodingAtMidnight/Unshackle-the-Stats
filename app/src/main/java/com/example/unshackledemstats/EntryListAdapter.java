@@ -17,16 +17,22 @@ import com.example.unshackledemstats.entities.gameEntrie;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class EntryListAdapter extends RecyclerView.Adapter<EntryListAdapter.MyViewHolder> {
 
     private Context context;
     private List<gameEntrie> gameEntrieList;
+    private RecyclerViewClickListener listener;
 
-    public EntryListAdapter(Context context) {
+    public EntryListAdapter(Context context, RecyclerViewClickListener listener) {
         this.context = context;
+        this.listener = listener;
     }
+
+
+
 
     public void setGameEntrieList(List<gameEntrie> gameEntrieList) {
         this.gameEntrieList = gameEntrieList;
@@ -59,7 +65,7 @@ public class EntryListAdapter extends RecyclerView.Adapter<EntryListAdapter.MyVi
         return this.gameEntrieList.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
           TextView battleTitle;
           TextView creepScore;
           TextView gameDeaths;
@@ -76,6 +82,7 @@ public class EntryListAdapter extends RecyclerView.Adapter<EntryListAdapter.MyVi
               gameKills = view.findViewById(R.id.gameKills);
               visionScore = view.findViewById(R.id.visionScore);
               layoutEntry = view.findViewById(R.id.layoutEntry);
+              view.setOnClickListener(this);
 
           }
 
@@ -87,5 +94,17 @@ public class EntryListAdapter extends RecyclerView.Adapter<EntryListAdapter.MyVi
                   layoutEntry.setBackgroundColor(Color.parseColor("#d3d3d3"));
               }
           }
+
+
+        @Override
+        public void onClick(View v) {
+            listener.onClick(v, getAdapterPosition());
+        }
     }
+
+    public interface RecyclerViewClickListener{
+        void onClick(View v, int position);
+
+    }
+
 }

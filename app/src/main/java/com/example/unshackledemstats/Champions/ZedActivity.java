@@ -20,7 +20,7 @@ public class ZedActivity extends AppCompatActivity {
     private EditText creepScore, gameDeaths, gameKills, visionScore, gameNotes, reflectionNotes, vodNotes;
     private TextView battleTitle;
     private String backColor;
-
+    private gameEntrie alreadyAvailableNote;
 
 
     @Override
@@ -60,15 +60,28 @@ public class ZedActivity extends AppCompatActivity {
                 saveNewEntry(creepScore.getText().toString(), gameDeaths.getText().toString(), gameKills.getText().toString(),
                         visionScore.getText().toString(), gameNotes.getText().toString(), reflectionNotes.getText().toString(),
                         vodNotes.getText().toString(),battleTitle.getText().toString(),backColor);
+
+                bundleCreator();
             }
+
+
         });
 
 
+      bundleCreator();
+
     }
 
+    public void bundleCreator() {
+        Intent intent = getIntent();
 
-
-
+//       String creepScoress = intent.getStringExtra("creepScore");
+        Bundle bundle = intent.getExtras();
+        if (bundle != null) {
+            String name = bundle.getString("creepScore");
+            creepScore.setText(name);
+        }
+    }
 
     private void saveNewEntry(String creepScores, String gameDeaths, String gameKills, String visionScore, String gameNotes, String reflectionNotes, String vodNotes, String battleTitle, String backColor) {
         entryDatabase db = entryDatabase.getEntryInstance(this.getApplicationContext());
