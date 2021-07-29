@@ -87,6 +87,12 @@ public class MatchHistoryDisplay extends AppCompatActivity{
                 Intent intent = new Intent(getApplicationContext(), ZedActivity.class);
                Bundle bundle = new Bundle();
                bundle.putString("creepScore", String.valueOf(gameEntrieList.get(position).getCreepScore()));
+               bundle.putString("gameDeaths",String.valueOf(gameEntrieList.get(position).getGameDeaths()));
+               bundle.putString("gameKills", String.valueOf(gameEntrieList.get(position).getGameKills()));
+               bundle.putString("visionScore", String.valueOf(gameEntrieList.get(position).getVisionScore()));
+               bundle.putString("gameNotes", gameEntrieList.get(position).getGameNotes());
+               bundle.putString("reflectionNotes", gameEntrieList.get(position).getReflectionNotes());
+               bundle.putString("bundleVodNotes", gameEntrieList.get(position).getVodNotes());
                intent.putExtras(bundle);
                 startActivityForResult(intent, REQUEST_CODE_UPDATE_NOTE);
             }

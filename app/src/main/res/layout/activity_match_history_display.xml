@@ -19,22 +19,23 @@
         android:id="@+id/addGameButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="692dp"
         android:backgroundTint="#2374ab"
         android:fontFamily="@font/fq_regular"
         android:text="Add Game"
         android:textColor="@color/white"
         android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/clearButton"
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="36dp"
+        android:backgroundTint="#81171B"
+        android:fontFamily="@font/fq_regular"
         android:text="Clear All"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

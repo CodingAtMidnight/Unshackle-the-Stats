@@ -60,8 +60,6 @@ public class ZedActivity extends AppCompatActivity {
                 saveNewEntry(creepScore.getText().toString(), gameDeaths.getText().toString(), gameKills.getText().toString(),
                         visionScore.getText().toString(), gameNotes.getText().toString(), reflectionNotes.getText().toString(),
                         vodNotes.getText().toString(),battleTitle.getText().toString(),backColor);
-
-                bundleCreator();
             }
 
 
@@ -79,7 +77,23 @@ public class ZedActivity extends AppCompatActivity {
         Bundle bundle = intent.getExtras();
         if (bundle != null) {
             String name = bundle.getString("creepScore");
+            String deaths = bundle.getString("gameDeaths");
+            String kills = bundle.getString("gameKills");
+            String visionScores = bundle.getString("visionScore");
+            String bundledGameNotes = bundle.getString("gameNotes");
+            String bundledReflectionNotes = bundle.getString("reflectionNotes");
+            String bundledVodNotes = bundle.getString("bundleVodNotes");
+
+
+
+
+            gameKills.setText(kills);
+            gameDeaths.setText(deaths);
             creepScore.setText(name);
+            visionScore.setText(visionScores);
+            gameNotes.setText(bundledGameNotes);
+            reflectionNotes.setText(bundledReflectionNotes);
+            vodNotes.setText(bundledVodNotes);
         }
     }
 
